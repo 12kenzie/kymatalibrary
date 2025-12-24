@@ -43,9 +43,6 @@
   transition: 950ms;
   margin-left: 1rem;
 }
-.navbar .nav-items li a:hover {
-  color: white;
-}
 
 @media (max-width: 768px) {
   .navbar {
