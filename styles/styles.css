@@ -20,6 +20,7 @@
 .navbar .icon img {
   height: 40px;
   vertical-align: middle;
+  gap: 20px;
 }
 .navbar .hamburger {
   display: none;
