@@ -20,11 +20,14 @@
         color: $mediumBlue;
 
         h3 {
+            font-family: 'Share Tech Mono', 'Arial';
+            font-weight: bold;
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3.5rem;
         }
 
         p {
+            font-family: 'Playfair Display', 'Times New Roman';
             margin-top: 0.5rem;
             font-size: 1.5rem;
         }
@@ -40,6 +43,7 @@
             border-radius: 4px;
             transition: 950ms;
             font-size: 1rem;
+            font-family: 'Share Tech Mono', 'Arial';
 
             a {
                 text-decoration: none;

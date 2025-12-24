@@ -1,5 +1,4 @@
 @import url("https://fonts.bunny.net/css?family=abel:400");
-@import url("https://fonts.bunny.net/css?family=abel:400");
 .navbar {
   width: 100%;
   min-height: 5vh;
@@ -16,6 +15,7 @@
   justify-content: flex-start;
   align-items: center;
   color: #ecf0f1;
+  font-family: "League Spartan", "Segoe UI";
 }
 .navbar .icon img {
   height: 40px;
@@ -36,6 +36,7 @@
   list-style: none;
   gap: 1rem;
   padding: 0;
+  font-family: "Playfair Display", "Times New Roman";
 }
 .navbar .nav-items li a {
   text-decoration: none;
@@ -90,10 +91,13 @@
   color: #34495e;
 }
 .intro .text-content h3 {
+  font-family: "Share Tech Mono", "Arial";
+  font-weight: bold;
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 .intro .text-content p {
+  font-family: "Playfair Display", "Times New Roman";
   margin-top: 0.5rem;
   font-size: 1.5rem;
 }
@@ -108,6 +112,7 @@
   border-radius: 4px;
   transition: 950ms;
   font-size: 1rem;
+  font-family: "Share Tech Mono", "Arial";
 }
 .intro .text-content button a {
   text-decoration: none;
@@ -279,6 +284,7 @@
     min-height: 3rem;
     display: flex;
     align-items: center;
+    font-family: "League Spartan", "Segoe UI";
   }
   @media (max-width: 768px) {
     .carousel > article h5 {
@@ -291,6 +297,7 @@
     font-size: 1rem;
     font-weight: bold;
     margin-block: 0.5rem 0.25rem;
+    font-family: "League Spartan", "Segoe UI";
   }
   @media (max-width: 768px) {
     .carousel > article h6 {
@@ -324,6 +331,7 @@
   .carousel > article p {
     margin-block: 0.25rem 0;
     font-size: 1rem;
+    font-family: "Playfair Display", "Times New Roman";
   }
   @media (max-width: 768px) {
     .carousel > article p {
@@ -343,6 +351,8 @@
     border-radius: 3px;
     padding: 0.25rem 0.5rem;
     transition: 150ms ease-in-out;
+    font-family: "Playfair Display", "Times New Roman";
+    font-size: 1rem;
   }
   @media (max-width: 768px) {
     .carousel > article a {
@@ -643,11 +653,13 @@
     min-height: 3rem;
     display: flex;
     align-items: center;
+    font-family: "League Spartan", "Segoe UI";
   }
   .carousel > article h6 {
     font-size: 1rem;
     font-weight: bold;
     margin-block: 0.5rem 0.25rem;
+    font-family: "League Spartan", "Segoe UI";
   }
   .carousel > article .byline-p-wrapper {
     grid-row: 3;
@@ -751,11 +763,13 @@
     min-height: 2.5rem;
     display: flex;
     align-items: center;
+    font-family: "League Spartan", "Segoe UI";
   }
   .card-grid > article h6 {
     font-size: 0.9rem;
     font-weight: bold;
     margin-block: 0.4rem 0.2rem;
+    font-family: "League Spartan", "Segoe UI";
   }
   .card-grid > article .rating {
     display: flex;
@@ -765,6 +779,7 @@
     font-weight: 500;
     color: light-dark(#333, #ddd);
     margin-block: 0.3rem 0.4rem;
+    font-family: "Playfair Display", "Times New Roman";
   }
   .card-grid > article .rating .stars {
     color: #f39c12;
@@ -792,6 +807,7 @@
     margin-block: 0.3rem 0;
     font-size: 0.85rem;
     line-height: 1.4;
+    font-family: "Playfair Display", "Times New Roman";
   }
   .card-grid > article a {
     position: absolute;
@@ -806,6 +822,7 @@
     padding: 0.2rem 0.4rem;
     font-size: 0.9rem;
     transition: 150ms ease-in-out;
+    font-family: "Playfair Display", "Times New Roman";
   }
   .card-grid > article a:hover, .card-grid > article a:focus-visible {
     background-color: var(--clr-cta);
@@ -867,6 +884,7 @@ body h4 {
   color: #2c3e50;
   font-size: 2rem;
   text-align: center;
+  font-family: "League Spartan", "Segoe UI";
 }
 
 @media (max-width: 768px) {

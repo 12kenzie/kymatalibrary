@@ -1,5 +1,4 @@
 @layer base, demo;
-@import url("https://fonts.bunny.net/css?family=abel:400");
 
 @layer demo {
   .carousel {
@@ -67,12 +66,14 @@
         min-height: 3rem;
         display: flex;
         align-items: center;
+        font-family: 'League Spartan', 'Segoe UI';
       }
 
       h6 {
         font-size: 1rem;
         font-weight: bold;
         margin-block: 0.5rem 0.25rem;
+        font-family: 'League Spartan', 'Segoe UI';
       }
 
       .byline-p-wrapper {
@@ -192,12 +193,14 @@
         min-height: 2.5rem;
         display: flex;
         align-items: center;
+        font-family: 'League Spartan', 'Segoe UI';
       }
 
       h6 {
         font-size: 0.9rem;
         font-weight: bold;
         margin-block: 0.4rem 0.2rem;
+        font-family: 'League Spartan', 'Segoe UI';
       }
 
       .rating {
@@ -208,6 +211,7 @@
         font-weight: 500;
         color: light-dark(#333, #ddd);
         margin-block: 0.3rem 0.4rem;
+        font-family: 'Playfair Display', 'Times New Roman';
 
         .stars {
           color: #f39c12;
@@ -239,6 +243,7 @@
         margin-block: 0.3rem 0;
         font-size: 0.85rem;
         line-height: 1.4;
+        font-family: 'Playfair Display', 'Times New Roman';
       }
 
       a {
@@ -254,6 +259,7 @@
         padding: 0.2rem 0.4rem;
         font-size: 0.9rem;
         transition: 150ms ease-in-out;
+        font-family: 'Playfair Display', 'Times New Roman';
 
         &:hover,
         &:focus-visible {
