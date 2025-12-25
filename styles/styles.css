@@ -864,8 +864,7 @@
 @layer demo {
   .carousel {
     --items: 6;
-    --carousel-width: min(80vw,
-            800px);
+    --carousel-width: min(80vw, 800px);
     --carousel-item-width: 280px;
     --carousel-item-height: 450px;
     --carousel-item-gap: 2rem;
@@ -994,16 +993,21 @@
   @media (max-width: 900px) {
     .card-grid-wl {
       grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      padding: 1.5rem;
     }
   }
   @media (max-width: 600px) {
     .card-grid-wl {
       grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 1rem;
     }
   }
   .card-grid-wl > article {
     width: 100%;
-    min-width: 311px;
+    /* REMOVED: min-width: 311px; - This was causing the overflow! */
+    max-width: 100%; /* Added to ensure cards don't exceed container */
     height: 420px;
     display: grid;
     grid-template-rows: 160px auto minmax(2rem, auto) minmax(3rem, auto) auto;
@@ -1040,20 +1044,15 @@
   .card-grid-wl > article .wl-links {
     display: flex;
     grid-row: 5;
-    /* side by side */
     justify-content: center;
     gap: 0.5rem;
-    /* spacing between Lazada and Shopee */
     margin-top: auto;
-    /* pushes links to bottom of card if needed */
     padding-bottom: 0.6rem;
-    /* spacing from card bottom */
   }
   .card-grid-wl > article .wl-links a {
     position: static;
     display: inline-block;
     align-self: center;
-    /* remove absolute positioning */
     transform: none;
     border: 1px solid var(--clr-cta);
     color: light-dark(var(--clr-cta), white);

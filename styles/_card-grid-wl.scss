@@ -3,8 +3,7 @@
 @layer demo {
     .carousel {
         --items: 6;
-        --carousel-width: min(80vw,
-                800px);
+        --carousel-width: min(80vw, 800px);
         --carousel-item-width: 280px;
         --carousel-item-height: 450px;
         --carousel-item-gap: 2rem;
@@ -15,27 +14,21 @@
         height: var(--carousel-item-height);
         overflow: visible;
         padding-block: 2rem;
-
         margin-inline: auto;
 
-
-
         &[mask] {
-            mask-image: linear-gradient(to right,
-                    transparent,
-                    black 10% 90%,
-                    transparent);
+            mask-image: linear-gradient(to right, transparent, black 10% 90%, transparent);
         }
 
-        &[reverse]>article {
+        &[reverse] > article {
             animation-direction: reverse;
         }
 
-        &:hover>article {
+        &:hover > article {
             animation-play-state: paused;
         }
 
-        >article {
+        > article {
             overflow: visible;
             position: absolute;
             top: 0;
@@ -53,7 +46,6 @@
             color: $darkBlue;
             font-size: 1.5rem;
             padding-block-end: 0;
-
 
             h5 {
                 font-size: 1.5rem;
@@ -92,7 +84,6 @@
                 pointer-events: none;
             }
 
-
             p {
                 margin-block: 0.25rem 0;
                 font-size: 1rem;
@@ -127,11 +118,11 @@
             border-radius: 10px 10px 0 0;
         }
 
-        >article>*:not(img):not(a) {
+        > article > *:not(img):not(a) {
             padding: 0 1rem;
         }
 
-        >article>div {
+        > article > div {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
@@ -157,15 +148,20 @@
 
         @media (max-width: 900px) {
             grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            padding: 1.5rem;
         }
 
         @media (max-width: 600px) {
             grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding: 1rem;
         }
 
-        >article {
+        > article {
             width: 100%;
-            min-width: 311px;
+            /* REMOVED: min-width: 311px; - This was causing the overflow! */
+            max-width: 100%; /* Added to ensure cards don't exceed container */
             height: 420px;
             display: grid;
             grid-template-rows: 160px auto minmax(2rem, auto) minmax(3rem, auto) auto;
@@ -196,32 +192,25 @@
                 font-family: 'League Spartan', 'Segoe UI';
             }
 
-
             .byline-p-wrapper {
                 grid-row: 4;
                 min-height: 3rem;
                 margin-bottom: 0.5rem;
             }
 
-
             .wl-links {
                 display: flex;
                 grid-row: 5;
-                /* side by side */
                 justify-content: center;
                 gap: 0.5rem;
-                /* spacing between Lazada and Shopee */
                 margin-top: auto;
-                /* pushes links to bottom of card if needed */
                 padding-bottom: 0.6rem;
-                /* spacing from card bottom */
             }
 
             .wl-links a {
                 position: static;
                 display: inline-block;
                 align-self: center;
-                /* remove absolute positioning */
                 transform: none;
                 border: 1px solid var(--clr-cta);
                 color: light-dark(var(--clr-cta), white);
@@ -241,7 +230,6 @@
                 outline: none;
             }
 
-
             img {
                 width: 100%;
                 height: 100%;
@@ -249,11 +237,11 @@
                 border-radius: 10px 10px 0 0;
             }
 
-            >*:not(img):not(a) {
+            > *:not(img):not(a) {
                 padding: 0 0.8rem;
             }
 
-            >div {
+            > div {
                 display: flex;
                 flex-direction: column;
                 gap: 0.4rem;
