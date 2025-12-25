@@ -1,0 +1,280 @@
+@layer base, demo;
+
+@layer demo {
+    .carousel {
+        --items: 6;
+        --carousel-width: min(80vw,
+                800px);
+        --carousel-item-width: 280px;
+        --carousel-item-height: 450px;
+        --carousel-item-gap: 2rem;
+        --clr-cta: #16a085;
+
+        position: relative;
+        width: var(--carousel-width);
+        height: var(--carousel-item-height);
+        overflow: visible;
+        padding-block: 2rem;
+
+        margin-inline: auto;
+
+
+
+        &[mask] {
+            mask-image: linear-gradient(to right,
+                    transparent,
+                    black 10% 90%,
+                    transparent);
+        }
+
+        &[reverse]>article {
+            animation-direction: reverse;
+        }
+
+        &:hover>article {
+            animation-play-state: paused;
+        }
+
+        >article {
+            overflow: visible;
+            position: absolute;
+            top: 0;
+            left: calc(100% + var(--carousel-item-gap));
+            width: var(--carousel-item-width);
+            height: var(--carousel-item-height);
+            display: grid;
+            grid-template-rows: 200px auto minmax(6.5rem, 1fr) auto;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            border: 1px solid light-dark(rgba(0 0 0 / 0.25), rgba(255 255 255 / 0.15));
+            border-radius: 10px;
+            background: light-dark(white, rgba(255 255 255 / 0.05));
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            color: $darkBlue;
+            font-size: 1.5rem;
+            padding-block-end: 0;
+
+
+            h5 {
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin-block: 0.75rem 0.5rem;
+                min-height: 3rem;
+                display: flex;
+                align-items: center;
+                font-family: 'League Spartan', 'Segoe UI';
+            }
+
+            h6 {
+                font-size: 1rem;
+                font-weight: bold;
+                margin-block: 0.5rem 0.25rem;
+                font-family: 'League Spartan', 'Segoe UI';
+            }
+
+            .byline-p-wrapper {
+                grid-row: 3;
+                max-height: 6.5rem;
+                overflow: hidden;
+                position: relative;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+
+            .byline-p-wrapper::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2rem;
+                background: linear-gradient(to bottom, transparent, light-dark(white, rgba(255 255 255 / 0.05)));
+                pointer-events: none;
+            }
+
+
+            p {
+                margin-block: 0.25rem 0;
+                font-size: 1rem;
+            }
+
+            a {
+                position: absolute;
+                bottom: 0.75rem;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1;
+                text-decoration: none;
+                border: 1px solid var(--clr-cta);
+                color: light-dark(var(--clr-cta), white);
+                border-radius: 3px;
+                padding: 0.25rem 0.5rem;
+                transition: 150ms ease-in-out;
+
+                &:hover,
+                &:focus-visible {
+                    background-color: var(--clr-cta);
+                    color: white;
+                    outline: none;
+                }
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        >article>*:not(img):not(a) {
+            padding: 0 1rem;
+        }
+
+        >article>div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+        }
+    }
+
+    @keyframes marquee {
+        100% {
+            transform: translateX(calc((var(--items) * (var(--carousel-item-width) + var(--carousel-item-gap))) * -1));
+        }
+    }
+
+    .card-grid-wl {
+        --clr-cta: #16a085;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 900px;
+        margin-inline: auto;
+        padding: 2rem;
+
+        @media (max-width: 900px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr;
+        }
+
+        >article {
+            width: 100%;
+            min-width: 311px;
+            height: 420px;
+            display: grid;
+            grid-template-rows: 160px auto minmax(2rem, auto) minmax(3rem, auto) auto;
+            gap: 0.4rem;
+            border: 1px solid light-dark(rgba(0 0 0 / 0.25), rgba(255 255 255 / 0.15));
+            border-radius: 10px;
+            background: light-dark(white, rgba(255 255 255 / 0.05));
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            color: $darkBlue;
+            font-size: 1.5rem;
+            padding-block-end: 0;
+            position: relative;
+
+            h5 {
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin-block: 0.5rem 0.4rem;
+                min-height: 2.5rem;
+                display: flex;
+                align-items: center;
+                font-family: 'League Spartan', 'Segoe UI';
+            }
+
+            h6 {
+                font-size: 0.9rem;
+                font-weight: bold;
+                margin-block: 0.4rem 0.2rem;
+                font-family: 'League Spartan', 'Segoe UI';
+            }
+
+
+            .byline-p-wrapper {
+                grid-row: 4;
+                min-height: 3rem;
+                margin-bottom: 0.5rem;
+            }
+
+
+            .wl-links {
+                display: flex;
+                grid-row: 5;
+                /* side by side */
+                justify-content: center;
+                gap: 0.5rem;
+                /* spacing between Lazada and Shopee */
+                margin-top: auto;
+                /* pushes links to bottom of card if needed */
+                padding-bottom: 0.6rem;
+                /* spacing from card bottom */
+            }
+
+            .wl-links a {
+                position: static;
+                display: inline-block;
+                align-self: center;
+                /* remove absolute positioning */
+                transform: none;
+                border: 1px solid var(--clr-cta);
+                color: light-dark(var(--clr-cta), white);
+                border-radius: 3px;
+                padding: 0.2rem 0.6rem;
+                font-size: 0.9rem;
+                text-decoration: none;
+                transition: 150ms ease-in-out;
+                width: 140px;
+                text-align: center;
+            }
+
+            .wl-links a:hover,
+            .wl-links a:focus-visible {
+                background-color: var(--clr-cta);
+                color: white;
+                outline: none;
+            }
+
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 10px 10px 0 0;
+            }
+
+            >*:not(img):not(a) {
+                padding: 0 0.8rem;
+            }
+
+            >div {
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
+                font-size: 0.7rem;
+            }
+        }
+    }
+}
+
+@layer base {
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100svh;
+        margin: 0;
+        padding: 1rem;
+        font-size: 1rem;
+        display: grid;
+        place-items: center;
+        gap: 2rem;
+    }
+}

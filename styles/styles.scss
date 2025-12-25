@@ -3,6 +3,7 @@
 @import "./intro";
 @import "./carousel";
 @import "./cardgrid";
+@import "./card-grid-wl";
 
 *,
 *::before,
@@ -30,7 +31,12 @@ body {
         text-align: center;
         font-family: 'League Spartan', 'Segoe UI';
     }
+
 }
+
+
+
+
 
 @media (max-width: 768px) {
     body {
